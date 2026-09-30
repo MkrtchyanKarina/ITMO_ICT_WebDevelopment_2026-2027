@@ -1,0 +1,10 @@
+site_name: Веб-программирование. Мкртчян Карина. K3341
+
+theme:
+  name: material
+  language: ru
+
+nav:
+  - Главная: index.md
+  - ЛР1:
+      - Отчёт: lr1/report.md
