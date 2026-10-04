@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Домашние задания</h2>
+
+  <table border="1" cellpadding="6" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Предмет</th>
+        <th>Преподаватель</th>
+        <th>Дата выдачи</th>
+        <th>Срок</th>
+        <th>Задание</th>
+        <th>Штрафы</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for hw in homeworks %}
+        <tr>
+          <td>{{ hw.subject.name }}</td>
+          <td>{{ hw.teacher.username|default:"—" }}</td>
+          <td>{{ hw.issued_at }}</td>
+          <td>{{ hw.deadline }}</td>
+          <td>{{ hw.text|truncatechars:80 }}</td>
+          <td>
+            {% for p in hw.penalties.all %}
+              −{{ p.points }} ({{ p.description }}){% if not forloop.last %}, {% endif %}
+            {% empty %}
+              —
+            {% endfor %}
+          </td>
+          <td>
+            <a href="{% url 'homework:detail' hw.pk %}">
+              {% if user.is_staff %}Открыть{% else %}Открыть / Сдать{% endif %}
+            </a>
+          </td>
+        </tr>
+      {% empty %}
+        <tr><td colspan="7">Пока заданий нет</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

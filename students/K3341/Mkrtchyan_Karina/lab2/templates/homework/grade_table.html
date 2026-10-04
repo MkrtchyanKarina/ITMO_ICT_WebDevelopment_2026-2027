@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Оценки класса {{ school_class|default:"—" }}</h2>
+
+  <table border="1" cellpadding="6" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Ученик</th>
+        {% for hw in homeworks %}
+          <th>{{ hw.subject.name }}<br><small>до {{ hw.deadline }}</small></th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+        <tr>
+          <td>{{ row.student.username }}</td>
+          {% for cell in row.cells %}
+            <td>{{ cell }}</td>
+          {% endfor %}
+        </tr>
+      {% empty %}
+        <tr><td colspan="999">В этом классе нет учеников</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <p><a href="{% url 'homework:list' %}">← К заданиям</a></p>
+{% endblock %}

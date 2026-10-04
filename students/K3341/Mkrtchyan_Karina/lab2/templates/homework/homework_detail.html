@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>{{ hw.subject.name }}</h2>
+  <p><b>Преподаватель:</b> {{ hw.teacher.username|default:"—" }}</p>
+  <p><b>Дата выдачи:</b> {{ hw.issued_at }}</p>
+  <p><b>Срок:</b> {{ hw.deadline }}</p>
+  <p><b>Задание:</b></p>
+  <div>{{ hw.text|linebreaks }}</div>
+
+  {% if hw.penalties.all %}
+    <p><b>Штрафы:</b></p>
+    <ul>
+      {% for p in hw.penalties.all %}
+        <li>−{{ p.points }} ({{ p.description }})</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <hr>
+  <h3>{% if existing %}Ваша сдача (можно отредактировать){% else %}Сдать задание{% endif %}</h3>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{% if existing %}Обновить{% else %}Сдать{% endif %}</button>
+  </form>
+
+  {% if existing.grade %}
+    <hr>
+    <h3>Оценка</h3>
+    <p><b>{{ existing.grade.value }}</b></p>
+    {% if existing.grade.comment %}
+      <p>{{ existing.grade.comment }}</p>
+    {% endif %}
+  {% endif %}
+
+  <p><a href="{% url 'homework:list' %}">← К списку</a></p>
+{% endblock %}
