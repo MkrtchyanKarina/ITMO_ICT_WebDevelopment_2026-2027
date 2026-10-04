@@ -16,7 +16,7 @@ def broadcast(message, sender):
         if client != sender:
             try:
                 client.send(message)
-            except:
+            except:  # если клиент отключен, можем его удалить из списка и закрыть сокет
                 client.close()
                 if client in clients:
                     clients.remove(client)
@@ -25,10 +25,10 @@ def broadcast(message, sender):
 def handle_client(client):
     while True:
         try:
-            message = client.recv(1024)
+            message = client.recv(1024)  # получаем сообщение от клиента
             if not message:
                 break
-            broadcast(message, client)
+            broadcast(message, client)  # делаем рассылку всем, кроме него
         except:
             if client in clients:
                 clients.remove(client)
@@ -46,7 +46,7 @@ def receive():
 
         # запуск отдельного потока для клиента
         thread = threading.Thread(target=handle_client, args=(client,))
-        thread.daemon = True
+        thread.daemon = True  # чтобы при отключении сервера, потоки для пользователей завершились
         thread.start()
 
 

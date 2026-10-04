@@ -10,7 +10,7 @@ server_socket.bind((host, port))
 server_socket.listen()
 print(f"Сервер запущен на: http://{host}:{port}/")
 
-journal = {}
+journal = {}  # словарь для записи оценок по предметам (предмет : список оценок по нему)
 
 form = """HTTP/1.1 200 OK
 Content-Type: text/html; charset=utf-8
@@ -84,8 +84,7 @@ try:
         headers = headers.decode("utf-8").split('\r\n')
         method, path, version = headers[0].split()
         print(f"Получен запрос от {client_address}:")
-
-        print()  # выводим заголовок
+        # print(method, path, version)
 
         if method == "POST":
             content_length = int([s for s in headers if s.startswith("Content-Length: ")][0].split()[1])
@@ -96,7 +95,7 @@ try:
                 body += chunk
             if body:
                 body = body.decode("utf-8")
-                parsed_body = urllib.parse.parse_qs(body)
+                parsed_body = urllib.parse.parse_qs(body)  # преобразуем данные в словарь
                 # Извлекаем значение поля 'subject' и 'mark'
                 subject = parsed_body.get('subject', ['None'])[0]
                 mark = parsed_body.get('mark', ['None'])[0]
@@ -121,7 +120,7 @@ try:
             response = form.format(marks_list=marks_list).encode('utf-8')
 
         else:
-            response = form.format("<h1>Ошибка!</h1>").encode('utf-8')
+            response = "<h1>Ошибка!</h1>".encode('utf-8')
 
         client_socket.sendall(response)
         client_socket.close()
