@@ -1,37 +1,53 @@
 {% extends "base.html" %}
 {% block content %}
-  <h2>{{ hw.subject.name }}</h2>
-  <p><b>Преподаватель:</b> {{ hw.teacher.username|default:"—" }}</p>
-  <p><b>Дата выдачи:</b> {{ hw.issued_at }}</p>
-  <p><b>Срок:</b> {{ hw.deadline }}</p>
-  <p><b>Задание:</b></p>
-  <div>{{ hw.text|linebreaks }}</div>
+  <div class="card">
+    <h2>{{ hw.subject.name }}</h2>
 
-  {% if hw.penalties.all %}
-    <p><b>Штрафы:</b></p>
-    <ul>
-      {% for p in hw.penalties.all %}
-        <li>−{{ p.points }} ({{ p.description }})</li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+    <div class="meta">
+      <p><b>Преподаватель:</b> {{ hw.teacher.username|default:"—" }}</p>
+      <p><b>Дата выдачи:</b> {{ hw.issued_at }}</p>
+      <p><b>Срок:</b> {{ hw.deadline }}</p>
+      <p><b>Задание:</b></p>
+      <div>{{ hw.text|linebreaks }}</div>
+    </div>
 
-  <hr>
-  <h3>{% if existing %}Ваша сдача (можно отредактировать){% else %}Сдать задание{% endif %}</h3>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">{% if existing %}Обновить{% else %}Сдать{% endif %}</button>
-  </form>
+    {% if hw.penalties.all %}
+      <p><b>Штрафы:</b></p>
+      <ul class="penalties">
+        {% for p in hw.penalties.all %}
+          <li>−{{ p.points }} ({{ p.description }})</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
 
-  {% if existing.grade %}
-    <hr>
-    <h3>Оценка</h3>
-    <p><b>{{ existing.grade.value }}</b></p>
-    {% if existing.grade.comment %}
-      <p>{{ existing.grade.comment }}</p>
+  {% if user.is_staff %}
+    <div class="card">
+      <h3>Панель преподавателя</h3>
+      <p class="muted">Оценки за сданные задания выставляются в административной панели Django.</p>
+      <a class="btn" href="{% url 'admin:homework_grade_changelist' %}">Перейти к оценкам</a>
+      <a class="btn btn--ghost" href="{% url 'homework:grade_table' %}">Таблица оценок класса</a>
+    </div>
+  {% else %}
+    <div class="card form-wrapper">
+      <h3>{% if existing %}Ваша сдача (можно отредактировать){% else %}Сдать задание{% endif %}</h3>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% if existing %}Обновить{% else %}Сдать{% endif %}</button>
+      </form>
+    </div>
+
+    {% if existing.grade %}
+      <div class="card">
+        <h3>Оценка</h3>
+        <p class="grade-value">{{ existing.grade.value }}</p>
+        {% if existing.grade.comment %}
+          <p>{{ existing.grade.comment }}</p>
+        {% endif %}
+      </div>
     {% endif %}
   {% endif %}
 
-  <p><a href="{% url 'homework:list' %}">← К списку</a></p>
+  <a class="back-link" href="{% url 'homework:list' %}">← К списку</a>
 {% endblock %}

@@ -4,33 +4,33 @@ from django.utils import timezone
 
 
 class Subject(models.Model):
-    """Учебный предмет (дисциплина)."""
+    """ Таблица Subject для хранения названий и описаний предметов """
     name = models.CharField("Название", max_length=100, unique=True)
     description = models.TextField("Описание", blank=True)
 
-    class Meta:
-        verbose_name = "Предмет"
+    class Meta:  # метаданные для изменения поведения модели
+        verbose_name = "Предмет"  # удобное название поля для отображения на сайте
         verbose_name_plural = "Предметы"
-        ordering = ["name"]
+        ordering = ["name"]  # сортировка по названию
 
     def __str__(self):
         return self.name
 
 
 class Homework(models.Model):
-    """Домашнее задание по предмету."""
+    """ Таблица Homework для хранения информации о домашних заданиях """
     subject = models.ForeignKey(
         Subject,
         on_delete=models.CASCADE,
-        related_name="homeworks",
+        related_name="homeworks",  # обратное имя для получения subject.homeworks - дз по данному предмету
         verbose_name="Предмет",
     )
     teacher = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.SET_NULL,
         null=True,
-        blank=True,
-        related_name="created_homeworks",
+        blank=True,  # оставляем пустую строку, если значение на записано
+        related_name="created_homeworks",  # обратное имя для получения user.created_homeworks - дз от данного учителя
         limit_choices_to={"is_staff": True},   # только учителя/админы
         verbose_name="Преподаватель",
     )
@@ -41,7 +41,7 @@ class Homework(models.Model):
     class Meta:
         verbose_name = "Домашнее задание"
         verbose_name_plural = "Домашние задания"
-        ordering = ["-issued_at", "deadline"]
+        ordering = ["-issued_at", "deadline"]  # ортировка сначала по дате выдачи по убыванию, затем по дедлайну по возрастанию
 
     def __str__(self):
         return f"{self.subject.name}: {self.text[:40]}"
@@ -51,17 +51,15 @@ class Homework(models.Model):
 
 
 class Penalty(models.Model):
-    """Штраф по заданию."""
+    """ Таблица Penalty - штрафы по заданиям """
     homework = models.ForeignKey(
         Homework,
         on_delete=models.CASCADE,
-        related_name="penalties",
+        related_name="penalties",  # обратное имя для получения homework.penalties - штрафов по данному дз
         verbose_name="Домашнее задание",
     )
     description = models.CharField("Описание штрафа", max_length=255)
-    points = models.PositiveSmallIntegerField(
-        "Размер штрафа (в баллах)", default=1
-    )
+    points = models.PositiveSmallIntegerField("Размер штрафа (в баллах)", default=1)
 
     class Meta:
         verbose_name = "Штраф"
@@ -73,16 +71,16 @@ class Penalty(models.Model):
 
 class Submission(models.Model):
     """Сдача домашнего задания учеником."""
-    homework = models.ForeignKey(
+    homework = models.ForeignKey(  # связь с таблицами дз и учеников по внешним ключам
         Homework,
         on_delete=models.CASCADE,
-        related_name="submissions",
+        related_name="submissions",  # получение отправок дз - homework.submissions
         verbose_name="Домашнее задание",
     )
     student = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name="submissions",
+        related_name="submissions",  # получение решений ученика - student.submissions
         limit_choices_to={"is_staff": False},   # только ученики
         verbose_name="Ученик",
     )
@@ -92,11 +90,11 @@ class Submission(models.Model):
     class Meta:
         verbose_name = "Сдача задания"
         verbose_name_plural = "Сдачи заданий"
-        unique_together = ("homework", "student")
+        unique_together = ("homework", "student")  # получение последней отправки дз учеником
         ordering = ["-submitted_at"]
 
     def __str__(self):
-        return f"{self.student} → {self.homework}"
+        return f"{self.student} -> {self.homework}"
 
 
 class Grade(models.Model):
@@ -104,7 +102,7 @@ class Grade(models.Model):
     submission = models.OneToOneField(
         Submission,
         on_delete=models.CASCADE,
-        related_name="grade",
+        related_name="grade",  # submission.grade - получение оценки
         verbose_name="Сдача",
     )
     value = models.PositiveSmallIntegerField("Оценка")

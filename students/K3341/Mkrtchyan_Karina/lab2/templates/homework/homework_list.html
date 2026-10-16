@@ -2,42 +2,92 @@
 {% block content %}
   <h2>Домашние задания</h2>
 
-  <table border="1" cellpadding="6" cellspacing="0">
-    <thead>
-      <tr>
-        <th>Предмет</th>
-        <th>Преподаватель</th>
-        <th>Дата выдачи</th>
-        <th>Срок</th>
-        <th>Задание</th>
-        <th>Штрафы</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for hw in homeworks %}
-        <tr>
-          <td>{{ hw.subject.name }}</td>
-          <td>{{ hw.teacher.username|default:"—" }}</td>
-          <td>{{ hw.issued_at }}</td>
-          <td>{{ hw.deadline }}</td>
-          <td>{{ hw.text|truncatechars:80 }}</td>
-          <td>
-            {% for p in hw.penalties.all %}
-              −{{ p.points }} ({{ p.description }}){% if not forloop.last %}, {% endif %}
-            {% empty %}
-              —
-            {% endfor %}
-          </td>
-          <td>
-            <a href="{% url 'homework:detail' hw.pk %}">
-              {% if user.is_staff %}Открыть{% else %}Открыть / Сдать{% endif %}
-            </a>
-          </td>
-        </tr>
-      {% empty %}
-        <tr><td colspan="7">Пока заданий нет</td></tr>
-      {% endfor %}
-    </tbody>
-  </table>
+  <div class="card">
+    {# --- Форма поиска и фильтрации --- #}
+    <form method="get" class="toolbar">
+      <input type="text" name="q" placeholder="Поиск по тексту задания..."
+             value="{{ request.GET.q|default:'' }}">
+      <select name="subject">
+        <option value="">Все предметы</option>
+        {% for s in subjects %}
+          <option value="{{ s.id }}"
+        {% if request.GET.subject == s.id|stringformat:"s" %}selected{% endif %}>{{ s.name }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">Применить</button>
+      {% if request.GET.q or request.GET.subject %}
+        <a class="btn btn--ghost" href="{% url 'homework:list' %}">Сбросить</a>
+      {% endif %}
+    </form>
+
+    {# --- Таблица --- #}
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Предмет</th>
+            <th>Преподаватель</th>
+            <th>Дата выдачи</th>
+            <th>Срок</th>
+            <th>Задание</th>
+            <th>Штрафы</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {# ВАЖНО: теперь не homeworks, а page_obj #}
+          {% for hw in page_obj %}
+            <tr>
+              <td>{{ hw.subject.name }}</td>
+              <td>{{ hw.teacher.username|default:"—" }}</td>
+              <td>{{ hw.issued_at }}</td>
+              <td>{{ hw.deadline }}</td>
+              <td>{{ hw.text|truncatechars:80 }}</td>
+              <td>
+                {% for p in hw.penalties.all %}
+                  −{{ p.points }} ({{ p.description }}){% if not forloop.last %}, {% endif %}
+                {% empty %}
+                  —
+                {% endfor %}
+              </td>
+              <td>
+                <a href="{% url 'homework:detail' hw.pk %}">
+                  {% if user.is_staff %}Открыть{% else %}Открыть / Сдать{% endif %}
+                </a>
+              </td>
+            </tr>
+          {% empty %}
+            <tr><td colspan="7" class="empty-row">Ничего не найдено</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    {# --- Блок пагинации (продвинутая, с сохранением поиска и фильтра) --- #}
+    {% if page_obj.paginator.num_pages > 1 %}
+      <div class="pagination">
+        {% if page_obj.has_previous %}
+          <a href="?{% if querystring %}{{ querystring }}&{% endif %}page=1">&laquo; Первая</a>
+          <a href="?{% if querystring %}{{ querystring }}&{% endif %}page={{ page_obj.previous_page_number }}">Назад</a>
+        {% endif %}
+
+        {% for num in page_range %}
+          {% if num == page_obj.paginator.ELLIPSIS %}
+            <span class="pagination__gap">{{ num }}</span>
+          {% elif num == page_obj.number %}
+            <span class="pagination__current">{{ num }}</span>
+          {% else %}
+            <a href="?{% if querystring %}{{ querystring }}&{% endif %}page={{ num }}">{{ num }}</a>
+          {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+          <a href="?{% if querystring %}{{ querystring }}&{% endif %}page={{ page_obj.next_page_number }}">Вперёд</a>
+          <a href="?{% if querystring %}{{ querystring }}&{% endif %}page={{ page_obj.paginator.num_pages }}">Последняя &raquo;</a>
+        {% endif %}
+
+        <span class="muted">Всего: {{ page_obj.paginator.count }}</span>
+      </div>
+    {% endif %}
+  </div>
 {% endblock %}

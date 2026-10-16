@@ -1,10 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-  <h2>Регистрация</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Зарегистрироваться</button>
-  </form>
-  <p><a href="{% url 'users:login' %}">Уже есть аккаунт? Войти</a></p>
+  <div class="card auth-card form-wrapper">
+    <h2>Регистрация</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <datalist id="class-list">
+        {% for c in classes %}<option value="{{ c }}"></option>{% endfor %}
+      </datalist>
+      <button type="submit">Зарегистрироваться</button>
+    </form>
+    <p class="muted"><a href="{% url 'users:login' %}">Уже есть аккаунт? Войти</a></p>
+  </div>
 {% endblock %}

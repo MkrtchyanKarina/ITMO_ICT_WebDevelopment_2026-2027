@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-  <h2>Вход</h2>
-  <form method="post">
-    {% csrf_token %}
-    <input name="username" placeholder="Логин">
-    <input name="password" type="password" placeholder="Пароль">
-    <button type="submit">Войти</button>
-  </form>
-  <p><a href="{% url 'users:register' %}">Регистрация</a></p>
+  <div class="card auth-card form-wrapper">
+    <h2>Вход</h2>
+    <form method="post">
+      {% csrf_token %}
+      <p><input name="username" type="text" placeholder="Логин"></p>
+      <p><input name="password" type="password" placeholder="Пароль"></p>
+      <button type="submit">Войти</button>
+    </form>
+    <p class="muted"><a href="{% url 'users:register' %}">Регистрация</a></p>
+  </div>
 {% endblock %}

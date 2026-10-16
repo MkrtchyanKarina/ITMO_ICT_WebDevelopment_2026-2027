@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4d213c23-2deb-4a54-bc61-3f5550f6d398" name="Changes" comment="started doing lab2">
+      <change afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/lr1/images/01-task1-server.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/lr1/images/02-task1-client.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/lr1/images/03-task2-client.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/lr1/images/04-task2-server.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/lr1/images/05-task3-browser.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/lr1/images/06-task3-terminal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/lr1/images/07-task4-server.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/lr1/images/08-task4-client.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/lr1/images/09-task4-client.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/lr1/images/10-task5-server.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/lr1/report.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework_project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/homework/grade_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/homework/grade_table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/homework/homework_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/homework/homework_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/homework/homework_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/homework/homework_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/users/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/users/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/users/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/users/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="lab1" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MkrtchyanKarina&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MkrtchyanKarina/ITMO_ICT_WebDevelopment_2026-2027.git&quot;,
+    &quot;accountId&quot;: &quot;f925776b-ce7c-4efe-9877-7a47a7ca2c70&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3K2ySxsbFko4uws3BlEr6lW8Zv4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.client (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.client (2).executor&quot;: &quot;Run&quot;,
+    &quot;Python.client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.server (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.server (2).executor&quot;: &quot;Run&quot;,
+    &quot;Python.server (3).executor&quot;: &quot;Run&quot;,
+    &quot;Python.server.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test2.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lab2&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PycharmProjects\ITMO_ICT_WebDevelopment_2026-2027\students\K3341\Mkrtchyan_Karina\lab2" />
+      <recent name="C:\Users\User\PycharmProjects\ITMO_ICT_WebDevelopment_2026-2027\students\K3341\Mkrtchyan_Karina\lab2\homework_project" />
+      <recent name="C:\Users\User\PycharmProjects\ITMO_ICT_WebDevelopment_2026-2027\students\K3341\Mkrtchyan_Karina\lab2\homework" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.server">
+    <configuration name="server (3)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ITMO_ICT_WebDevelopment_2026-2027" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab1/task_3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab1/task_3/server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ITMO_ICT_WebDevelopment_2026-2027" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab1/task_5" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab1/task_5/server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ITMO_ICT_WebDevelopment_2026-2027" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab1/task_4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab1/task_4/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ITMO_ICT_WebDevelopment_2026-2027" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab1/task_5" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab1/task_5/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ITMO_ICT_WebDevelopment_2026-2027" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab1/task_4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab1/task_4/test2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.server" />
+        <item itemvalue="Python.test2" />
+        <item itemvalue="Python.test (1)" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.server (3)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-50341a9f1f9c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.26222.68" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4d213c23-2deb-4a54-bc61-3f5550f6d398" name="Changes" comment="" />
+      <created>1790769960996</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1790769960996</updated>
+    </task>
+    <task id="LOCAL-00001" summary="lab1 done">
+      <option name="closed" value="true" />
+      <created>1790800192665</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1790800192665</updated>
+    </task>
+    <task id="LOCAL-00002" summary="lab1 done">
+      <option name="closed" value="true" />
+      <created>1790891504733</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1790891504733</updated>
+    </task>
+    <task id="LOCAL-00003" summary="lab1 done">
+      <option name="closed" value="true" />
+      <created>1791110331356</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1791110331356</updated>
+    </task>
+    <task id="LOCAL-00004" summary="started doing lab2">
+      <option name="closed" value="true" />
+      <created>1791117716565</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1791117716565</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="lab1 done" />
+    <MESSAGE value="started doing lab2" />
+    <option name="LAST_COMMIT_MESSAGE" value="started doing lab2" />
+  </component>
+</project>

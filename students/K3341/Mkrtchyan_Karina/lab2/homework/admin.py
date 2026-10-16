@@ -9,12 +9,14 @@ class PenaltyInline(admin.TabularInline):
 
 @admin.register(Subject)
 class SubjectAdmin(admin.ModelAdmin):
+    """ Отображение списка предметов и поиска по их названиям """
     list_display = ("name",)
     search_fields = ("name",)
 
 
 @admin.register(Homework)
 class HomeworkAdmin(admin.ModelAdmin):
+    """ Отображение информации о дз, фильтрация по предмету, учителю и дедлайну. Поиск по содержанию. """
     list_display = ("subject", "teacher", "issued_at", "deadline")
     list_filter = ("subject", "teacher", "deadline")
     search_fields = ("text",)
@@ -23,6 +25,7 @@ class HomeworkAdmin(admin.ModelAdmin):
 
 @admin.register(Submission)
 class SubmissionAdmin(admin.ModelAdmin):
+    """ Отображение решений дз, поиск по имени ученика, фильтрация по предмету и дз """
     list_display = ("homework", "student", "submitted_at")
     list_filter = ("homework__subject", "homework")
     search_fields = ("student__username",)
@@ -30,5 +33,6 @@ class SubmissionAdmin(admin.ModelAdmin):
 
 @admin.register(Grade)
 class GradeAdmin(admin.ModelAdmin):
+    """ Отображение оценок и даты выставления оценки по решению дз. Фильтрация по оценке. """
     list_display = ("submission", "value", "graded_at")
     list_filter = ("value",)
