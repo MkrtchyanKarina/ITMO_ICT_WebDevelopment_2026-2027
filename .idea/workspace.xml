@@ -1,36 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d213c23-2deb-4a54-bc61-3f5550f6d398" name="Changes" comment="started doing lab2">
-      <change afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/lr1/images/01-task1-server.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/lr1/images/02-task1-client.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/lr1/images/03-task2-client.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/lr1/images/04-task2-server.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/lr1/images/05-task3-browser.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/lr1/images/06-task3-terminal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/lr1/images/07-task4-server.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/lr1/images/08-task4-client.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/lr1/images/09-task4-client.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/lr1/images/10-task5-server.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/lr1/report.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/homework_project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/homework/grade_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/homework/grade_table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/homework/homework_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/homework/homework_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/homework/homework_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/homework/homework_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/users/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/users/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/templates/users/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/users/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/users/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/students/K3341/Mkrtchyan_Karina/lab2/users/views.py" afterDir="false" />
+    <list default="true" id="4d213c23-2deb-4a54-bc61-3f5550f6d398" name="Changes" comment="lab2 done">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +256,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791117716565</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="lab2 done">
+      <option name="closed" value="true" />
+      <created>1792145648981</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1792145648981</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,6 +284,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lab1 done" />
     <MESSAGE value="started doing lab2" />
-    <option name="LAST_COMMIT_MESSAGE" value="started doing lab2" />
+    <MESSAGE value="lab2 done" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab2 done" />
   </component>
 </project>
